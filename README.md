@@ -2,12 +2,12 @@
 Using Recursive Leasting Squares (RLS) with Neural Network for one-shot learning
 
 **Advantages of using RLS for learning instead of gradient descent**
-1. Fast learning, sample efficient can learn on one-shot
+1. Fast learning and sample efficient can learn in one-shot
 2. Online Learning (suitable for real time learning)
 3. No worries about local minima
 
 **Disadvantages:**
-1. Computationally inefficient if the size of the input is big.
+1. Computationally inefficient if the size of the input is big (Quadratic Complexity).
 2. Sensitive of overflow and underflow of the estimated value and this can lead to unstability in some cases
 3. The current implementation works with a single hidden unit neural network. It is not clear if adding more layers will be useful since learning only happens in the last layer 
 
