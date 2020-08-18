@@ -1,6 +1,8 @@
 # RLS_Learning
 Using Recursive Leasting Squares (RLS) with Neural Network for one-shot learning
 
+To run the code, you need to have numpy installed. There is an example usage at the end of *RLS_Neural_Network.py* which showcases how this network can learn XOR data in one single iteration. Just run the code and see the output.
+
 **Advantages of using RLS for learning instead of gradient descent**
 1. Fast learning and sample efficiency (can learn in one-shot)
 2. Online Learning (suitable for real time learning)
