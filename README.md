@@ -1,3 +1,7 @@
+
+![GitHub repo size](https://img.shields.io/github/repo-size/hunar4321/RLS_Learning)
+![GitHub](https://img.shields.io/github/license/hunar4321/RLS_Learning)
+
 # RLS_Learning
 Using Recursive Leasting Squares (RLS) with Neural Network for one-shot learning
 
