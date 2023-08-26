@@ -14,8 +14,8 @@ ys = data[:N]
 for i in range(1, N, 2):
     ys[i] = 1
     
-ys[70] = -1
-ys[150] = -1
+#ys[70] = -1
+#ys[150] = -1
 
 M = 20 # looking back M steps to predict the signal
 b = np.zeros(M)
