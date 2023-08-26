@@ -7,16 +7,14 @@ This is a simple intivitve operation to estimate least squares for multiple vari
 
 Associated video tutorial is here: https://youtu.be/4vGaN1dTVhw
 
-Inspired by the following post from the user: whuber (on stackexchange.com):
-https://stats.stackexchange.com/q/166718
-
-### Illustration: RLS Error Prediction
+### Illustration - RLS Error Prediction:
 
 ![](images/rls_figure.jpg)
 
+Inspired from the following post by whuber: https://stats.stackexchange.com/q/166718
+
 ### Comparision between how errors are shared amaong the inputs in Gradient based methods vs. RLS based methods
 ![](images/comparision.jpg)
-
 
 To run the code, you need to have numpy installed. 
 
