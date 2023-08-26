@@ -1,5 +1,5 @@
 """
-Lattice Recursive Least Squares for squential data 
+Lattice Recursive Least Squares for predicting next elements in the squential data 
 Video Tutorial: https://youtu.be/4vGaN1dTVhw
 """
 
