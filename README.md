@@ -18,7 +18,7 @@ Inspired from the following post by whuber: https://stats.stackexchange.com/q/16
 
 To run the code, you need to have numpy installed. 
 
-# Fast Learning in Neural Networks (Real time optimization)
+### Fast Learning in Neural Networks (Real time optimization)
 
 There is an example usage at the end of *RLS_Neural_Network.py* which showcases how this network can learn XOR data in a single iteration. Run the code and see the output.
 
