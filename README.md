@@ -2,10 +2,27 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/hunar4321/RLS_Learning)
 ![GitHub](https://img.shields.io/github/license/hunar4321/RLS_Learning)
 
-# RLS_Learning
-Using Recursive Leasting Squares (RLS) with Neural Network for one-shot learning.
+# Recursive Least Squares by predicting errors
+This is a simple intivitve operation to estimate least squares for multiple variables 
 
-To run the code, you need to have numpy installed. There is an example usage at the end of *RLS_Neural_Network.py* which showcases how this network can learn XOR data in one single iteration. Just run the code and see the output.
+Associated video tutorial is here: https://youtu.be/4vGaN1dTVhw
+
+Inspired by the following post from the user: whuber (on stackexchange.com):
+https://stats.stackexchange.com/q/166718
+
+# Illustration: RLS Error Prediction
+
+![](images/rls_figure.jpg)
+
+# Comparision between how errors are shared amaong the inputs in Gradient based methods vs. RLS based methods
+![](images/comparision.JPG)
+
+
+To run the code, you need to have numpy installed. 
+
+# One Shot Learning in Neural Networks
+
+There is an example usage at the end of *RLS_Neural_Network.py* which showcases how this network can learn XOR data in one single iteration. Just run the code and see the output.
 
 **Advantages of using RLS for learning instead of gradient descent**
 1. Fast learning and sample efficiency (can learn in one-shot).
