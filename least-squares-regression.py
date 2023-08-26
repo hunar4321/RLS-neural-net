@@ -1,4 +1,5 @@
 """
+Multiple Regression Using Recursive Error prediction. 
 Author: Hunar Ahmad @ Brainxyz
 Video tutorial: https://youtu.be/4vGaN1dTVhw
 """
