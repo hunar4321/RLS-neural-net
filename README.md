@@ -5,7 +5,7 @@
 # Recursive Least Squares by predicting errors
 This is a simple intivitve operation to estimate least squares for multiple variables 
 
-Associated video tutorial is here: https://youtu.be/4vGaN1dTVhw
+Associated video tutorial is here: https://youtu.be/a6zgA_iNuEA
 
 ### Illustration - RLS Error Prediction:
 
