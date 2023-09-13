@@ -3,7 +3,7 @@
 ![GitHub](https://img.shields.io/github/license/hunar4321/RLS_Learning)
 
 # Recursive Least Squares by predicting errors
-This is a simple intivitve operation to solve linear equations using recursive least squares
+This is a simple intuitive method to solve linear equations using recursive least squares
 
 Checkout the step by step video tutorial here: https://youtu.be/a6zgA_iNuEA
 
