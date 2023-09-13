@@ -2,7 +2,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/hunar4321/RLS_Learning)
 ![GitHub](https://img.shields.io/github/license/hunar4321/RLS_Learning)
 
-# Recursive Least Squares by predicting errors
+# 1. Recursive Least Squares by predicting errors
 This is a simple intuitive method to solve linear equations using recursive least squares
 
 Checkout the step by step video tutorial here: https://youtu.be/a6zgA_iNuEA
@@ -10,7 +10,6 @@ Checkout the step by step video tutorial here: https://youtu.be/a6zgA_iNuEA
 ------------
 
 Algorithmically, this method is faster than matrix inversion due to the fewer operations required. However, in practice, it's hard to fairly compare this method with the already established linear solvers because many optimalization tricks have been done at the level of the hardware for matrix operations. We added a simple C++ implementation using Eigen library to compare the performance of this method to the matrix inversion method.
-Inspired from the following post by whuber: https://stats.stackexchange.com/q/166718
 
 #### Illustration - RLS Error Prediction:
 
@@ -19,9 +18,9 @@ Inspired from the following post by whuber: https://stats.stackexchange.com/q/16
 #### Comparision between how errors are shared among the inputs in Gradient based methods vs. RLS based methods
 ![](images/comparision.jpg)
 
-To run the code, you need to have numpy installed. 
+Inspired from the following post by whuber: https://stats.stackexchange.com/q/166718
 
-### Fast Learning in Neural Networks (Real time optimization)
+# 2. Fast Learning in Neural Networks (Real time optimization)
 -----------------------------------
 There is an example usage at the end of *RLS_Neural_Network.py* which showcases how this network can learn XOR data in a single iteration. Run the code and see the output.
 
