@@ -9,8 +9,6 @@ Checkout the step by step video tutorial here: https://youtu.be/a6zgA_iNuEA
 
 ------------
 
-Algorithmically, this method is faster than matrix inversion due to the fewer operations required. However, in practice, it's hard to fairly compare this method with the already established linear solvers because many optimalization tricks have been done at the level of the hardware for matrix operations. We added a simple C++ implementation using Eigen library to compare the performance of this method to the matrix inversion method.
-
 #### Illustration - RLS Error Prediction:
 
 ![](images/rls_figure.jpg)
@@ -19,6 +17,7 @@ Algorithmically, this method is faster than matrix inversion due to the fewer op
 ![](images/comparision.jpg)
 
 Inspired from the following post by whuber: https://stats.stackexchange.com/q/166718
+Algorithmically, this method is faster than matrix inversion due to the fewer operations required. However, in practice, it's hard to fairly compare this method with the already established linear solvers because many optimalization tricks have been done at the level of the hardware for matrix operations. We added a simple C++ implementation using Eigen library to compare the performance of this method to the matrix inversion method.
 
 # 2. Fast Learning in Neural Networks (Real time optimization)
 -----------------------------------
