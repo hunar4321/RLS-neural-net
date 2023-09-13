@@ -9,7 +9,7 @@ Checkout the step by step video tutorial here: https://youtu.be/a6zgA_iNuEA
 
 ------------
 
-Algorithmically this method is faster than matrix inversion due to the fewer operations requaried. However, in practise, it's hard to fairly compare this method with the already establisehd linear solvers because many opitimatization tricks have been done at the level of the hardware for matrix operations. We added a simple C++ implimentation using Eigen library to compare the performance of this method to the matrix inversion method.
+Algorithmically, this method is faster than matrix inversion due to the fewer operations required. However, in practice, it's hard to fairly compare this method with the already established linear solvers because many optimalization tricks have been done at the level of the hardware for matrix operations. We added a simple C++ implementation using Eigen library to compare the performance of this method to the matrix inversion method.
 
 ### Illustration - RLS Error Prediction:
 
