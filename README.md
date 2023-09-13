@@ -3,9 +3,13 @@
 ![GitHub](https://img.shields.io/github/license/hunar4321/RLS_Learning)
 
 # Recursive Least Squares by predicting errors
-This is a simple intivitve operation to estimate least squares for multiple variables 
+This is a simple intivitve operation to solve linear equations using recursive least squares
 
-Associated video tutorial is here: https://youtu.be/a6zgA_iNuEA
+Checkout the step by step video tutorial here: https://youtu.be/a6zgA_iNuEA
+
+------------
+
+Algorithmically this method is faster than matrix inversion due to the fewer operations requaried. However, in practise, it's hard to fairly compare this method with the already establisehd linear solvers because many opitimatization tricks have been done at the level of the hardware for matrix operations. We added a simple C++ implimentation using Eigen library to compare the performance of this method to the matrix inversion method.
 
 ### Illustration - RLS Error Prediction:
 
