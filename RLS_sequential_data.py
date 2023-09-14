@@ -28,7 +28,6 @@ ff = np.zeros(M) + 0.000001
 bb = np.zeros(M) + 0.000001
 e = np.zeros(N)
 
-truth = np.zeros(N)
 pred = np.zeros(N)
 act = np.zeros((M, N))
 for n in range(N - 1):
