@@ -1,3 +1,4 @@
+// this is a simple C++ script to compare the raw performance of our RLS method versus the conventional matrix inversion method
 #include <iostream>
 #include <Eigen/Dense>
 #include <chrono>
@@ -19,7 +20,6 @@ int main() {
 
     Eigen::MatrixXd x = xs;  // make copies of xs & ys before modifying them 
     Eigen::VectorXd y = ys;
-
 
     // method1
     auto start = std::chrono::high_resolution_clock::now();
