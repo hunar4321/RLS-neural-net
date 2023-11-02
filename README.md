@@ -5,7 +5,7 @@
 # 1. Recursive Least Squares by predicting errors
 This is a simple intuitive method to solve linear equations using recursive least squares
 
-Checkout the step by step video tutorial here: https://youtu.be/a6zgA_iNuEA
+Checkout the step by step video tutorial here: https://youtu.be/4vGaN1dTVhw
 
 ------------
 
