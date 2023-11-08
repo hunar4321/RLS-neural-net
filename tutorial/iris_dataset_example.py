@@ -27,13 +27,14 @@ for i in range(M):
     for j in range(i+1, M):
         wx = np.sum(x[i] * x[j]) /sx[i]
         x[j] -= wx * x[i]
-         
+
+num_classes = 3 #Number of the output classes = 3 for iris dataset calculated from: (np.max(y_train)+1)
+
 ### finding the weights of the decorrelated xs with ys
 print("Method 1. regression on ys using multiple y_classes in the form of one_hot matrix")
-num_classes = np.max(y_train)+1
 ys = np.zeros((N, num_classes))
 for i in range(len(y_train)): #converting the classes to one_hot format
-    ys[i,  y_train[i]]=1
+    ys[i,  y_train[i]] = 1
     
 wy = np.zeros((M, num_classes))    
 for c in range(num_classes):
@@ -67,7 +68,7 @@ for i in range(M-1,-1, -1):
 ## predict the training set
 yh_train = X_train @ wy
 y_train_pred = np.round(yh_train).astype(int)
-y_train_pred = np.clip(y_train_pred, 0, 2)
+y_train_pred = np.clip(y_train_pred, 0, num_classes-1)
 train_accuracy = np.sum(y_train_pred == y_train)/len(y_train)
 print('train accuracy:', train_accuracy)
 
@@ -75,6 +76,6 @@ print('train accuracy:', train_accuracy)
 ## predict the testing set
 yh_test = X_test @ wy
 y_test_pred = np.round(yh_test).astype(int)
-y_test_pred = np.clip(y_test_pred, 0, 2)
+y_test_pred = np.clip(y_test_pred, 0, num_classes-1)
 test_accuracy = np.sum(y_test_pred == y_test)/len(y_test)
 print('test accuracy:', test_accuracy)
