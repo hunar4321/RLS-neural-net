@@ -11,13 +11,13 @@ y = iris.target
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # Adding a column of ones to the features to include the bias (intercept) in the model
-X_train_bias = np.c_[np.ones(X_train.shape[0]), X_train]
-X_test_bias = np.c_[np.ones(X_test.shape[0]), X_test]
+X_train = np.c_[np.ones(X_train.shape[0]), X_train]
+X_test = np.c_[np.ones(X_test.shape[0]), X_test]
 
 print('De-correlating all the xs with each other')
 print('----------------------------')
 
-xs = X_train_bias.T
+xs = X_train.T
 N = xs.shape[1]
 M = xs.shape[0]
 x = xs.copy() 
@@ -28,8 +28,7 @@ for i in range(M):
         wx = np.sum(x[i] * x[j]) /sx[i]
         x[j] -= wx * x[i]
          
-### finding the weights of the decorelated xs with ys
-
+### finding the weights of the decorrelated xs with ys
 print("1. regression on ys using multiple y_classes in the form of one_hot matrix")
 num_classes = np.max(y_train)+1
 ys = np.zeros((N, num_classes))
@@ -44,13 +43,13 @@ for c in range(num_classes):
         y -= wy[i, c] * xs[i]    
     
 ## predict the training set
-yh_train = X_train_bias @ wy
+yh_train = X_train @ wy
 y_train_pred = np.argmax(yh_train, axis=1)
 train_accuracy = np.sum(y_train_pred == y_train)/len(y_train)
 print('train accuracy:', train_accuracy)
 
 ## predict the testing set
-yh_test = X_test_bias @ wy
+yh_test = X_test @ wy
 y_test_pred = np.argmax(yh_test, axis=1)
 test_accuracy = np.sum(y_test_pred == y_test)/len(y_test)
 print('test accuracy:', test_accuracy)
@@ -66,7 +65,7 @@ for i in range(M-1,-1, -1):
     y -= wy[i] * xs[i]
 
 ## predict the training set
-yh_train = X_train_bias @ wy
+yh_train = X_train @ wy
 y_train_pred = np.round(yh_train).astype(int)
 y_train_pred = np.clip(y_train_pred, 0, 2)
 train_accuracy = np.sum(y_train_pred == y_train)/len(y_train)
@@ -74,7 +73,7 @@ print('train accuracy:', train_accuracy)
 
 
 ## predict the testing set
-yh_test = X_test_bias @ wy
+yh_test = X_test @ wy
 y_test_pred = np.round(yh_test).astype(int)
 y_test_pred = np.clip(y_test_pred, 0, 2)
 test_accuracy = np.sum(y_test_pred == y_test)/len(y_test)
