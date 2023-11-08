@@ -59,7 +59,7 @@ print("---------------------------------")
 print("2. regression on ys with simple thresholing of the y calsses.....")
 
 wy = np.zeros(M)
-y = np.asarray(y_train, dtype=float)        
+y = y_train.astype(float)    
 for i in range(M-1,-1, -1):
     wy[i] = np.sum(y * x[i]) / sx[i]
     y -= wy[i] * xs[i]
