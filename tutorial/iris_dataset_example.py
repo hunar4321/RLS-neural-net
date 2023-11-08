@@ -14,7 +14,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 X_train_bias = np.c_[np.ones(X_train.shape[0]), X_train]
 X_test_bias = np.c_[np.ones(X_test.shape[0]), X_test]
 
-print('Decorlating all the xs with each other')
+print('De-correlating all the xs with each other')
 print('----------------------------')
 
 xs = X_train_bias.T
