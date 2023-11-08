@@ -29,7 +29,7 @@ for i in range(M):
         x[j] -= wx * x[i]
          
 ### finding the weights of the decorrelated xs with ys
-print("1. regression on ys using multiple y_classes in the form of one_hot matrix")
+print("Method 1. regression on ys using multiple y_classes in the form of one_hot matrix")
 num_classes = np.max(y_train)+1
 ys = np.zeros((N, num_classes))
 for i in range(len(y_train)): #converting the classes to one_hot format
@@ -56,7 +56,7 @@ print('test accuracy:', test_accuracy)
 
 
 print("---------------------------------")
-print("2. regression on ys with simple thresholing of the y calsses.....")
+print("Method 2. regression on ys with simple roundng & thresholing of the predicted y calsses.....")
 
 wy = np.zeros(M)
 y = y_train.astype(float)    
