@@ -55,7 +55,6 @@ y_test_pred = np.argmax(yh_test, axis=1)
 test_accuracy = np.sum(y_test_pred == y_test)/len(y_test)
 print('test accuracy:', test_accuracy)
 
-
 print("---------------------------------")
 print("Method 2. regression on ys with simple roundng & thresholing of the predicted y calsses.....")
 
@@ -79,3 +78,47 @@ y_test_pred = np.round(yh_test).astype(int)
 y_test_pred = np.clip(y_test_pred, 0, num_classes-1)
 test_accuracy = np.sum(y_test_pred == y_test)/len(y_test)
 print('test accuracy:', test_accuracy)
+
+print("---------------------------------")
+print("Method 3. regression on ys using multiple y_classes in the form of random vectors (embedings)")
+
+np.random.seed(1)
+# Generate a random vector (embeding) for each class
+embed_size = 10 #can be same as the class number, 3, or it can be more
+class_vectors = np.random.randn(num_classes, embed_size)
+ys = np.zeros((N, embed_size))
+# Assign each label its corresponding random vector
+for i in range(len(y_train)):
+    ys[i] = class_vectors[y_train[i]]
+    
+wy = np.zeros((M, embed_size))    
+for c in range(embed_size):
+    y = ys[:, c]
+    for i in range(M-1,-1, -1):
+        wy[i, c] = np.sum(y * x[i]) / sx[i]
+        y -= wy[i, c] * xs[i]    
+    
+## In method 3, the predicted output will be a vector instead of a single number therefore we use a simple distance measure below to find the nearst class vector to the output 
+def find_nearest_vector(vec, class_vectors):
+    min_distance = np.inf
+    min_index = 0
+    for i in range(len(class_vectors)):
+        distance = np.sum(np.abs(vec - class_vectors[i])) 
+        if distance < min_distance:
+            min_distance = distance
+            min_index = i
+    return min_index    
+    
+## predict the training set
+yh_train = X_train @ wy
+y_train_pred = [find_nearest_vector(vec, class_vectors) for vec in yh_train]
+train_accuracy = np.sum(y_train_pred == y_train)/len(y_train)
+print('train accuracy:', train_accuracy)
+
+## predict the testing set
+yh_test = X_test @ wy
+y_test_pred =[find_nearest_vector(vec, class_vectors) for vec in yh_test]
+test_accuracy = np.sum(y_test_pred == y_test)/len(y_test)
+print('test accuracy:', test_accuracy)
+
+
