@@ -26,6 +26,22 @@ print('De-correlating all the xs with each other')
 print('----------------------------')
 
 xs = X_train.T
+
+np.random.seed(1)
+
+def activate(w, x):
+    linear = x = w.T @ x    
+    # out = linear
+    out = np.maximum(linear, 0) #relu    
+    return out
+
+nodes = 500
+w = np.random.randn(xs.shape[0], nodes)
+xs = activate(w , xs)
+
+X_train = activate(w , X_train.T).T
+X_test = activate(w , X_test.T).T
+
 N = xs.shape[1]
 M = xs.shape[0]
 
